@@ -1,13 +1,10 @@
 <template>
   <div class="app-header">
-    App header
+    <h1 class="app-name">My app name</h1>
+    <button>theme toggler</button>
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup lang="ts"></script>
 
-</script>
-
-<style src="./AppHeader.style.scss" scoped>
-
-</style>
+<style src="./AppHeader.style.scss" scoped></style>

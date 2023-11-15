@@ -1,4 +1,21 @@
 .app-footer {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   height: 100px;
+  background-color: var(--color-background-soft);
+  padding: 10px 15px;
+}
+
+.footer_list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 0;
+}
+
+.footer_list_item {
+  margin: 0 15px;
+  font-size: 18px
 }

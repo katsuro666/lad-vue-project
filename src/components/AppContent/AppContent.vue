@@ -1,13 +1,9 @@
 <template>
-  <div class="app-content">
-    Content
-  </div>
+  <main class="app-content">
+    <div class="content-wrapper">Content</div>
+  </main>
 </template>
 
-<script setup lang="ts">
+<script setup lang="ts"></script>
 
-</script>
-
-<style src="./AppContent.style.scss" scoped>
-
-</style>
+<style src="./AppContent.style.scss" scoped></style>

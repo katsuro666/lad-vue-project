@@ -1,4 +1,14 @@
+@import '@/assets/base.css';
+
 .app-header {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   height: 100px;
+  background-color: var(--color-background-soft);
+  padding: 10px 15px;
+}
+
+.app-name {
+  font-weight: 700;
 }
