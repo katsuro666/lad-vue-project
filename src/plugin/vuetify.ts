@@ -1,10 +1,10 @@
-import { createVuetify, type ThemeDefinition } from 'vuetify'
+import { type ThemeDefinition } from 'vuetify'
 
-const customDarkTheme: ThemeDefinition = {
+export const darkTheme: ThemeDefinition = {
   dark: true,
   colors: {
-    background: '#FFFFFF',
-    surface: '#FFFFFF',
+    background: '#121212',
+    surface: '#212121',
     primary: '#6200EE',
     'primary-darken-1': '#3700B3',
     secondary: '#03DAC6',
@@ -13,26 +13,21 @@ const customDarkTheme: ThemeDefinition = {
     info: '#2196F3',
     success: '#4CAF50',
     warning: '#FB8C00',
+    'text-primary': '#FFFFFF',
+    
+    'shadow-lg': '#424242',
   }
 }
 
-const customLightTheme = {
+export const lightTheme: ThemeDefinition = {
   dark: false,
   colors: {
-    background: "#eee",
-    surface: "#15202b",
-    primary: "#3f51b5",
-    secondary: "#00ccff",
-    error: "#ffcc00",
-  },
-};
-
-export default createVuetify({
-  theme: {
-    defaultTheme: 'customDarkTheme',
-    themes: {
-      customDarkTheme,
-      customLightTheme
-    }
+    background: "#ffffff",
+    surface: '#fff',
+    primary: '#3f51b5',
+    secondary: '#00ccff',
+    error: '#ffcc00',
+    'text-primary': '#000000',
+    'shadow-lg': '#BEBEBE',
   }
-})
+}

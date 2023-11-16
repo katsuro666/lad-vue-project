@@ -6,13 +6,11 @@ import AppFooter from './components/AppFooter/AppFooter.vue'
 
 <template>
   <v-app>
-    <!-- <v-theme-provider theme="dark"> -->
       <div class="app-wrapper">
         <AppHeader />
         <AppContent />
         <AppFooter />
       </div>
-    <!-- </v-theme-provider> -->
   </v-app>
 </template>
 
