@@ -1,8 +1,7 @@
-<script setup lang="ts">
-</script>
-
 <template>
-  <main>
-    <h1>Home</h1>
-  </main>
+  <AppContent />
 </template>
+
+<script setup lang="ts">
+import AppContent from '@/components/AppContent/AppContent.vue'
+</script>
