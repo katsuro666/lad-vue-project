@@ -1,7 +1,6 @@
 export enum RouteNames {
-  HOME = 'home',
-  AUTH = 'auth',
-  NOTFOUND = 'notFound',
+  HOME = 'Home',
+  AUTH = 'Auth',
 }
 
 export enum RoutePaths {

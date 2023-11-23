@@ -1,37 +1,53 @@
 <template>
   <div class="app-header">
-    <h1 class="app-name">My app name</h1>
-    <v-menu transition="scale-transition">
-      <template v-slot:activator="{ props }">
-        <v-btn class="theme-button" :flat="true" v-bind="props">
-          <svg-icon
-            v-if="selectedTheme === 'lightTheme'"
-            type="mdi"
-            :path="mdiWhiteBalanceSunny"
-          ></svg-icon>
-          <svg-icon
-            v-else-if="selectedTheme === 'darkTheme'"
-            type="mdi"
-            :path="mdiWeatherNight"
-          ></svg-icon>
-          <svg-icon v-else-if="selectedTheme === null" type="mdi" :path="mdiMonitor"></svg-icon>
-        </v-btn>
-      </template>
+    <router-link to="/">
+      <h1 class="app-name">My app name</h1>
+    </router-link>
 
-      <v-list class="menu-list">
-        <v-list-item @click="changeTheme('lightTheme')">
-          <svg-icon type="mdi" :path="mdiWhiteBalanceSunny"></svg-icon>
-        </v-list-item>
+    <div class="header__actions">
+      <v-menu transition="scale-transition">
+        <template v-slot:activator="{ props }">
+          <v-btn class="header__buttons" :flat="true" v-bind="props">
+            <svg-icon
+              v-if="selectedTheme === 'lightTheme'"
+              type="mdi"
+              :path="mdiWhiteBalanceSunny"
+            ></svg-icon>
+            <svg-icon
+              v-else-if="selectedTheme === 'darkTheme'"
+              type="mdi"
+              :path="mdiWeatherNight"
+            ></svg-icon>
+            <svg-icon v-else-if="selectedTheme === null" type="mdi" :path="mdiMonitor"></svg-icon>
+          </v-btn>
+        </template>
 
-        <v-list-item @click="changeTheme('darkTheme')">
-          <svg-icon type="mdi" :path="mdiWeatherNight"></svg-icon>
-        </v-list-item>
+        <v-list class="menu-list">
+          <v-list-item @click="changeTheme('lightTheme')">
+            <svg-icon type="mdi" :path="mdiWhiteBalanceSunny"></svg-icon>
+          </v-list-item>
 
-        <v-list-item @click="changeTheme('systemTheme')">
-          <svg-icon type="mdi" :path="mdiMonitor"></svg-icon>
-        </v-list-item>
-      </v-list>
-    </v-menu>
+          <v-list-item @click="changeTheme('darkTheme')">
+            <svg-icon type="mdi" :path="mdiWeatherNight"></svg-icon>
+          </v-list-item>
+
+          <v-list-item @click="changeTheme('systemTheme')">
+            <svg-icon type="mdi" :path="mdiMonitor"></svg-icon>
+          </v-list-item>
+        </v-list>
+      </v-menu>
+
+      <v-menu transition="scale-transition">
+        <template v-slot:activator="{ props }">
+          <v-btn class="header__buttons" :flat="true" v-bind="props">
+            <svg-icon type="mdi" :path="mdiAccount"></svg-icon>
+          </v-btn>
+        </template>
+
+        <GuestMenu />
+        <!-- <UserMenu /> -->
+      </v-menu>
+    </div>
   </div>
 </template>
 
@@ -39,8 +55,10 @@
 import { useTheme } from 'vuetify'
 import { type AllThemesType } from './AppHeader.types'
 import SvgIcon from '@jamescoyle/vue-icon'
-import { mdiWeatherNight, mdiWhiteBalanceSunny, mdiMonitor } from '@mdi/js'
+import { mdiWeatherNight, mdiWhiteBalanceSunny, mdiMonitor, mdiAccount } from '@mdi/js'
 import { systemTheme, userTheme } from '@/plugin/theme'
+import UserMenu from './components/UserMenu/UserMenu.vue'
+import GuestMenu from './components/GuestMenu/GuestMenu.vue'
 
 const theme = useTheme()
 let selectedTheme = userTheme

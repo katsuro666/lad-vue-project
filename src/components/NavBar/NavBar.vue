@@ -1,9 +1,12 @@
 <template>
   <div class="nav-bar">
-    <ul class="nav-list">
-      <li class="nav__item">Breadcrumb 1</li>
-      <li class="nav__item">Breadcrumb 2</li>
-      <li class="nav__item">Breadcrumb 3</li>
+    <ul class="nav__list" v-for="(matched, idx) in $route.matched" :key="idx">
+      <li class="nav__item">
+        <a :href="matched.path">
+          {{ matched.name }}
+        </a>
+      </li>
+      <span v-if="idx != Object.keys($route.matched).length - 1"> / </span>
     </ul>
   </div>
 </template>

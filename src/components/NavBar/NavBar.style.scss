@@ -1,6 +1,9 @@
-.nav-list {
+.nav__list {
   display: flex;
   list-style: none;
+  background-color: rgb(var(--v-theme-surface));
+  box-shadow: 0 0px 5px rgb(var(--v-theme-shadow-lg));
+  width: fit-content;
 }
 
 .nav__item {

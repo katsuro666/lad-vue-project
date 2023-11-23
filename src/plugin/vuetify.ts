@@ -5,6 +5,7 @@ export const darkTheme: ThemeDefinition = {
   colors: {
     background: '#121212',
     surface: '#212121',
+    'surface-hover': '#303030',
     primary: '#6200EE',
     'primary-darken-1': '#3700B3',
     secondary: '#03DAC6',
@@ -24,6 +25,7 @@ export const lightTheme: ThemeDefinition = {
   colors: {
     background: "#ffffff",
     surface: '#fff',
+    'surface-hover': '#eeeeee',
     primary: '#3f51b5',
     secondary: '#00ccff',
     error: '#ffcc00',
