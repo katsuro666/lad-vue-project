@@ -1,13 +1,11 @@
 <template>
   <v-app>
-    <MainLayout>
+    <component :is="$route.meta.layout || 'div'">
       <router-view />
-    </MainLayout>
+    </component>
   </v-app>
 </template>
 
-<script setup lang="ts">
-import MainLayout from './layouts/MainLayout/MainLayout.vue'
-</script>
+<script setup lang="ts"></script>
 
 <style scoped></style>

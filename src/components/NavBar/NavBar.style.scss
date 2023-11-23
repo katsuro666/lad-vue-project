@@ -1,0 +1,17 @@
+.nav-list {
+  display: flex;
+  list-style: none;
+}
+
+.nav__item {
+  padding: 0px 25px;
+  background-color: rgb(var(--v-theme-surface));
+  box-shadow: 0 0px 5px rgb(var(--v-theme-shadow-lg));
+  transition: all ease 0.2s;
+
+  &:hover {
+    cursor: pointer;
+    scale: 1.02;
+    box-shadow: 0 0px 10px rgb(var(--v-theme-shadow-lg));
+  }
+}

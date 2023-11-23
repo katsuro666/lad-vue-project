@@ -1,8 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '@/views/HomeView.vue'
-import AuthView from '@/views/AuthView.vue'
-import PageNotFound from '@/views/PageNotFound.vue'
 import { RouteNames, RoutePaths } from '@/constants/route.constants'
+import MainLayout from '@/layouts/MainLayout/MainLayout.vue'
+import HomeView from '@/views/HomeView/HomeView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -10,17 +9,26 @@ const router = createRouter({
     {
       path: RoutePaths.HOME,
       name: RouteNames.HOME,
-      component: HomeView
+      component: HomeView,
+      meta: {
+        layout: MainLayout
+      }
     },
     {
       path: RoutePaths.AUTH,
       name: RoutePaths.AUTH,
-      component: AuthView
+      component: () => import('@/views/AuthView/AuthView.vue'),
+      meta: {
+        layout: MainLayout
+      }
     },
     {
       path: RoutePaths.NOTFOUND,
       name: RoutePaths.NOTFOUND,
-      component: PageNotFound
+      component: () => import('@/views/PageNotFound/PageNotFound.vue'),
+      meta: {
+        layout: MainLayout
+      }
     }
   ]
 })
