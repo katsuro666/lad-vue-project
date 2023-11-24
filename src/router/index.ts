@@ -15,6 +15,13 @@ const router = createRouter({
       }
     },
     {
+      path: RoutePaths.ABOUT,
+      component: () => import('@/views/AboutView/AboutView.vue'),
+      meta: {
+        layout: MainLayout
+      }
+    },
+    {
       path: RoutePaths.AUTH + RoutePaths.LOGIN,
       component: () => import('@/views/AuthView/LogInView.vue'),
       meta: {
