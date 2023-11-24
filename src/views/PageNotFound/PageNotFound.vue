@@ -1,16 +1,9 @@
 <template>
-  <div class="not-found-wrapper">
+  <div class="not-found-wrapper view-wrapper">
     <h1>404 - Page Not Found</h1>
     <p>This page no longer exists or was moved to another location.</p>
   </div>
 </template>
 
-<style scoped>
-.not-found-wrapper {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-}
-</style>
+<style src="../view.style.scss" scoped></style>
+<style src="./PageNotFound.scss" scoped></style>

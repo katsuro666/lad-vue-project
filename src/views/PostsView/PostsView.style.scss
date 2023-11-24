@@ -1,0 +1,18 @@
+.posts__wrapper {
+  align-items: normal;
+}
+
+.posts {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 15px;
+}
+
+.post {
+  display: flex;
+  flex-direction: column;
+  background: rgb(var(--v-theme-surface));
+  box-shadow: 0 0 10px rgb(var(--v-theme-shadow-lg));
+  padding: 10px;
+}

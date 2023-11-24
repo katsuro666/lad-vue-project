@@ -1,6 +1,6 @@
 <template>
   <main class="app-content">
-    <div class="content-wrapper">Content</div>
+    <div class="content-wrapper">Main page content</div>
   </main>
 </template>
 

@@ -79,13 +79,14 @@ import {
   mdiAccount,
   mdiMenu,
   mdiHome,
-  mdiInformationOutline
+  mdiInformationOutline,
+  mdiMessageOutline
 } from '@mdi/js'
 import { systemTheme, userTheme } from '@/plugin/theme'
 import UserMenu from './components/UserMenu/UserMenu.vue'
 import GuestMenu from './components/GuestMenu/GuestMenu.vue'
 import { ref } from 'vue'
-import { RoutePaths } from '@/constants/route.constants'
+import { RouteNames, RoutePaths } from '@/constants/route.constants'
 
 const theme = useTheme()
 let selectedTheme = userTheme
@@ -93,8 +94,9 @@ let selectedTheme = userTheme
 const drawer = ref(false)
 
 const items = [
-  { text: 'Home', icon: mdiHome, path: RoutePaths.HOME },
-  { text: 'About', icon: mdiInformationOutline, path: RoutePaths.ABOUT }
+  { text: RouteNames.HOME, icon: mdiHome, path: RoutePaths.HOME },
+  { text: RouteNames.ABOUT, icon: mdiInformationOutline, path: RoutePaths.ABOUT },
+  { text: RouteNames.POSTS, icon: mdiMessageOutline, path: RoutePaths.POSTS }
 ]
 
 function changeTheme(themeTitle: AllThemesType) {

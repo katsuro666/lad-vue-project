@@ -1,5 +1,6 @@
 <template>
-  <AppContent />
+    <AppContent />
+
 </template>
 
 <script setup lang="ts">

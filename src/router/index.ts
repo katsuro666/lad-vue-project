@@ -22,6 +22,14 @@ const router = createRouter({
       }
     },
     {
+      path: RoutePaths.POSTS,
+      name: RouteNames.POSTS,
+      component: () => import('@/views/PostsView/PostsView.vue'),
+      meta: {
+        layout: MainLayout
+      }
+    },
+    {
       path: RoutePaths.AUTH + RoutePaths.LOGIN,
       component: () => import('@/views/AuthView/LogInView.vue'),
       meta: {
