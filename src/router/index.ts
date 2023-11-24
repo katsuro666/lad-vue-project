@@ -15,16 +15,21 @@ const router = createRouter({
       }
     },
     {
-      path: RoutePaths.AUTH,
-      name: RouteNames.AUTH,
-      component: () => import('@/views/AuthView/AuthView.vue'),
+      path: RoutePaths.AUTH + RoutePaths.LOGIN,
+      component: () => import('@/views/AuthView/LogInView.vue'),
+      meta: {
+        layout: MainLayout
+      }
+    },
+    {
+      path: RoutePaths.AUTH + RoutePaths.SIGNUP,
+      component: () => import('@/views/AuthView/SignUpView.vue'),
       meta: {
         layout: MainLayout
       }
     },
     {
       path: RoutePaths.NOTFOUND,
-      name: RouteNames.NOTFOUND,
       component: () => import('@/views/PageNotFound/PageNotFound.vue'),
       meta: {
         layout: MainLayout

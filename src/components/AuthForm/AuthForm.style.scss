@@ -1,0 +1,41 @@
+.auth__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgb(var(--v-theme-surface));
+  box-shadow: 0 0 10px rgb(var(--v-theme-shadow-lg));
+  width: 100%;
+  padding: 20px 15px;
+  gap: 15px;
+}
+
+.auth__fields {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+}
+
+.auth__buttons {
+  display: flex;
+  justify-content: center;
+  width: 90%;
+}
+
+.auth__input {
+  padding: 10px;
+  width: 70%;
+}
+
+.auth__button {
+  width: 40%;
+}
+
+.auth__link {
+  font-style: italic;
+  transition: all 0.2s;
+
+  &:hover {
+    font-weight: 700;
+  }
+}

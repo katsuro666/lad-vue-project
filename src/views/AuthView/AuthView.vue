@@ -4,11 +4,4 @@
   </div>
 </template>
 
-<style scoped>
-.auth-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 1;
-}
-</style>
+<style src="./AuthView.style.scss" scoped></style>

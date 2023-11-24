@@ -45,7 +45,10 @@
         </template>
 
         <GuestMenu />
-        <!-- <UserMenu /> -->
+        <!-- 
+          <UserMenu /> 
+          if user is logged in 
+        -->
       </v-menu>
     </div>
   </div>
