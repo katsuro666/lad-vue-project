@@ -7,14 +7,13 @@
       <router-link :to="signUpPath">Sign up</router-link>
     </v-list-item>
   </v-list>
-  
 </template>
 
 <script setup lang="ts">
-import { RoutePaths } from '@/constants/route.constants';
+import { RoutePaths } from '@/constants/route.constants'
 
-const loginPath = RoutePaths.AUTH + RoutePaths.LOGIN;
-const signUpPath = RoutePaths.AUTH + RoutePaths.SIGNUP;
+const loginPath = RoutePaths.LOGIN
+const signUpPath = RoutePaths.SIGNUP
 </script>
 
 <style src="@/components/AppHeader/AppHeader.style.scss" scoped></style>

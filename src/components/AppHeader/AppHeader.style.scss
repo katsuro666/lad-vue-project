@@ -5,14 +5,13 @@
   justify-content: space-between;
   align-items: center;
   height: 70px;
-  background-color: rgb(var(--v-theme-surface))!important;
-  box-shadow: 0 0 10px rgb(var(--v-theme-shadow-lg))!important;
+  background-color: rgb(var(--v-theme-surface)) !important;
+  box-shadow: 0 0 10px rgb(var(--v-theme-shadow-lg)) !important;
 }
 
 .app__nav {
   display: flex;
   align-items: center;
-
 }
 
 .app-name {
@@ -30,11 +29,6 @@
 
 .header__buttons {
   border-radius: 50px;
-
-  @include respond(tablet) {
-    color: blue;
-  }
-
 }
 
 .header__actions {

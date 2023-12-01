@@ -7,10 +7,6 @@
   flex-direction: column;
   width: 100%;
   gap: 15px;
-
-  &:hover {
-    cursor: pointer;
-  }
 }
 
 .post {
@@ -19,4 +15,10 @@
   background: rgb(var(--v-theme-surface));
   box-shadow: 0 0 10px rgb(var(--v-theme-shadow-lg));
   padding: 10px;
+  transition: ease 0.2s;
+
+  &:hover {
+    cursor: pointer;
+    scale: 1.01;
+  }
 }

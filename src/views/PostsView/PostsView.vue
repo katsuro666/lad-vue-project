@@ -18,25 +18,17 @@
 </template>
 
 <script setup lang="ts">
-import axios from 'axios'
-import { ref } from 'vue'
 import { onMounted } from 'vue'
-import type { PostType } from './Posts.types'
 import AtomSpinner from '@/components/AtomSpinner/AtomSpinner.vue'
 import { RoutePaths } from '@/constants/route.constants'
+import { usePostsStore } from '@/stores/posts'
+import { storeToRefs } from 'pinia'
 
-const isLoading = ref(false)
+const postsStore = usePostsStore()
+const { posts, isLoading } = storeToRefs(postsStore)
+const { getPosts } = postsStore
 
-const posts = ref<PostType[]>([])
-
-const fetchPosts = async () => {
-  isLoading.value = true
-  const res = await axios.get('https://jsonplaceholder.typicode.com/posts/')
-  posts.value = res.data
-  isLoading.value = false
-}
-
-onMounted(fetchPosts)
+onMounted(getPosts)
 </script>
 
 <style src="../view.style.scss" scoped></style>
