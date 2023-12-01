@@ -48,8 +48,8 @@ const props = defineProps({
   }
 })
 
-const signUpPath = RoutePaths.AUTH + RoutePaths.SIGNUP
-const signInPath = RoutePaths.AUTH + RoutePaths.LOGIN
+const signUpPath = RoutePaths.SIGNUP
+const signInPath = RoutePaths.LOGIN
 
 const email = ref('')
 const password = ref('')
