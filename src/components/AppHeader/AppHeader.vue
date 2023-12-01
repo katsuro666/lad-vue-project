@@ -91,8 +91,8 @@ const drawer = ref(false)
 
 const items = [
   { text: RouteNames.HOME, icon: mdiHome, path: RoutePaths.HOME },
+  { text: RouteNames.POSTS, icon: mdiMessageOutline, path: RoutePaths.POSTS },
   { text: RouteNames.ABOUT, icon: mdiInformationOutline, path: RoutePaths.ABOUT },
-  { text: RouteNames.POSTS, icon: mdiMessageOutline, path: RoutePaths.POSTS }
 ]
 
 const themeStore = useThemeStore()
