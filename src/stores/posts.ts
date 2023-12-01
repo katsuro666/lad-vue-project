@@ -13,10 +13,12 @@ export const usePostsStore = defineStore('posts', () => {
 
   const route = useRoute()
 
+  const baseUrl: string = import.meta.env.VITE_BASE_URL
+
   async function getPosts() {
     try {
       isLoading.value = true
-      const res = await axios.get(`${import.meta.env.BASE_URL}/posts/`)
+      const res = await axios.get(`${baseUrl}/posts/`)
       posts.value = res.data
       isLoading.value = false
       isError.value = false
@@ -31,7 +33,7 @@ export const usePostsStore = defineStore('posts', () => {
   async function getPost() {
     try {
       isLoading.value = true
-      const res = await axios.get(`${import.meta.env.BASE_URL}/posts/${route.params.id}`)
+      const res = await axios.get(`${baseUrl}/posts/${route.params.id}`)
       post.value = res.data
       isLoading.value = false
       isError.value = false
