@@ -4,6 +4,8 @@ export enum RouteNames {
   LOGIN = 'Log in',
   SIGNUP = 'Sign up',
   POSTS = 'Posts',
+  USERS = 'Users',
+  USER = 'User',
   POST = 'Post'
 }
 
@@ -13,5 +15,7 @@ export enum RoutePaths {
   LOGIN = '/login',
   SIGNUP = '/signup',
   POSTS = '/posts',
+  USERS = '/users',
+  USER = '/user',
   NOTFOUND = '/:catchAll(.*)*'
 }

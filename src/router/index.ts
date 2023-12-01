@@ -12,27 +12,29 @@ const router = createRouter({
       component: HomeView,
       meta: {
         layout: MainLayout,
-        title: 'Main Page',
+        title: 'Home',
         breadcrumb: () => [
           {
-            title: 'Main Page'
+            title: 'Home'
           }
         ]
       }
     },
+
     {
       path: RoutePaths.ABOUT,
       component: () => import('@/views/AboutView/AboutView.vue'),
       meta: {
         layout: MainLayout,
-        title: 'About Page',
+        title: 'About',
         breadcrumb: () => [
           {
-            title: 'About Page'
+            title: 'About'
           }
         ]
       }
     },
+
     {
       path: RoutePaths.POSTS,
       name: RouteNames.POSTS,
@@ -42,7 +44,7 @@ const router = createRouter({
         title: 'Posts',
         breadcrumb: (route: RouteLocationNormalizedLoaded) => [
           {
-            title: 'Main Page',
+            title: 'Home',
             link: RoutePaths.HOME
           },
           {
@@ -51,6 +53,7 @@ const router = createRouter({
         ]
       }
     },
+
     {
       path: `${RoutePaths.POSTS}/:id`,
       name: RouteNames.POST,
@@ -60,7 +63,7 @@ const router = createRouter({
         title: 'Post',
         breadcrumb: (route: RouteLocationNormalizedLoaded) => [
           {
-            title: 'Main Page',
+            title: 'Home',
             link: RoutePaths.HOME
           },
           {
@@ -73,6 +76,49 @@ const router = createRouter({
         ]
       }
     },
+
+    {
+      path: RoutePaths.USERS,
+      name: RouteNames.USERS,
+      component: () => import('@/views/UsersView/UsersView.vue'),
+      meta: {
+        layout: MainLayout,
+        title: 'Users',
+        breadcrumb: (route: RouteLocationNormalizedLoaded) => [
+          {
+            title: 'Home ',
+            link: RoutePaths.HOME
+          },
+          {
+            title: route.meta.title
+          }
+        ]
+      }
+    },
+
+    {
+      path: `${RoutePaths.USERS}/:id`,
+      name: RouteNames.USER,
+      component: () => import('@/views/UserView/UserView.vue'),
+      meta: {
+        layout: MainLayout,
+        title: 'User',
+        breadcrumb: (route: RouteLocationNormalizedLoaded) => [
+          {
+            title: 'Home',
+            link: RoutePaths.HOME
+          },
+          {
+            title: 'Users',
+            link: RoutePaths.USERS
+          },
+          {
+            title: route.params.id as string
+          }
+        ]
+      }
+    },
+
     {
       path: RoutePaths.LOGIN,
       component: () => import('@/views/AuthView/LogInView.vue'),
@@ -81,7 +127,7 @@ const router = createRouter({
         title: 'Log In',
         breadcrumb: (route: RouteLocationNormalizedLoaded) => [
           {
-            title: 'Main Page',
+            title: 'Home',
             link: RoutePaths.HOME
           },
           {
@@ -90,6 +136,7 @@ const router = createRouter({
         ]
       }
     },
+
     {
       path: RoutePaths.SIGNUP,
       component: () => import('@/views/AuthView/SignUpView.vue'),
@@ -98,7 +145,7 @@ const router = createRouter({
         title: 'Sign Up',
         breadcrumb: (route: RouteLocationNormalizedLoaded) => [
           {
-            title: 'Main Page',
+            title: 'Home',
             link: RoutePaths.HOME
           },
           {
@@ -107,6 +154,7 @@ const router = createRouter({
         ]
       }
     },
+
     {
       path: RoutePaths.NOTFOUND,
       component: () => import('@/views/PageNotFound/PageNotFound.vue'),
@@ -115,7 +163,7 @@ const router = createRouter({
         title: 'Not Found',
         breadcrumb: (route: RouteLocationNormalizedLoaded) => [
           {
-            title: 'Main Page',
+            title: 'Home',
             link: RoutePaths.HOME
           },
           {

@@ -78,7 +78,8 @@ import {
   mdiMenu,
   mdiHome,
   mdiInformationOutline,
-  mdiMessageOutline
+  mdiMessageOutline,
+  mdiAccountGroup
 } from '@mdi/js'
 import UserMenu from './components/UserMenu/UserMenu.vue'
 import GuestMenu from './components/GuestMenu/GuestMenu.vue'
@@ -92,6 +93,7 @@ const drawer = ref(false)
 const items = [
   { text: RouteNames.HOME, icon: mdiHome, path: RoutePaths.HOME },
   { text: RouteNames.POSTS, icon: mdiMessageOutline, path: RoutePaths.POSTS },
+  { text: RouteNames.USERS, icon: mdiAccountGroup, path: RoutePaths.USERS },
   { text: RouteNames.ABOUT, icon: mdiInformationOutline, path: RoutePaths.ABOUT },
 ]
 

@@ -1,20 +1,3 @@
-<!-- <template>
-  <div class="view-wrapper">
-    <div class="post">Post {{ route.params.id }}</div>
-  </div>
-</template>
-
-<script setup lang="ts">
-import { useRoute } from 'vue-router';
-
-  const route = useRoute()
-</script>
-
-<style src="./PostView.style.scss" scoped></style>
-<style src="../view.style.scss" scoped>
-
-</style> -->
-
 <template>
   <div class="post-wrapper">
     <AtomSpinner v-if="isLoading" />
@@ -23,7 +6,7 @@ import { useRoute } from 'vue-router';
       <v-divider thickness="2"></v-divider>
       <p>{{ post?.body }}</p>
     </div>
-    <div v-else>Пост не найден!</div>
+    <div v-else>Post not found</div>
     <div v-if="isError">Error!</div>
   </div>
 </template>
@@ -39,9 +22,6 @@ const postsStore = usePostsStore()
 const { post, isError, isLoading } = storeToRefs(postsStore)
 const { getPost } = postsStore
 
-// onMounted(() => {
-//   getPost();
-// });
 onMounted(getPost)
 </script>
 
