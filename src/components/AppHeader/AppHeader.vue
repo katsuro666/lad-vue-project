@@ -9,16 +9,16 @@
       <template v-slot:activator="{ props }">
         <v-btn @click.prevent class="header__buttons" :flat="true" v-bind="props">
           <svg-icon
-            v-if="selectedTheme === 'lightTheme'"
+            v-if="currentTheme === 'lightTheme'"
             type="mdi"
             :path="mdiWhiteBalanceSunny"
           ></svg-icon>
           <svg-icon
-            v-else-if="selectedTheme === 'darkTheme'"
+            v-else-if="currentTheme === 'darkTheme'"
             type="mdi"
             :path="mdiWeatherNight"
           ></svg-icon>
-          <svg-icon v-else-if="selectedTheme === null" type="mdi" :path="mdiMonitor"></svg-icon>
+          <svg-icon v-else-if="currentTheme === null" type="mdi" :path="mdiMonitor"></svg-icon>
         </v-btn>
       </template>
 
@@ -69,8 +69,6 @@
 </template>
 
 <script setup lang="ts">
-import { useTheme } from 'vuetify'
-import { type AllThemesType } from './AppHeader.types'
 import SvgIcon from '@jamescoyle/vue-icon'
 import {
   mdiWeatherNight,
@@ -82,14 +80,12 @@ import {
   mdiInformationOutline,
   mdiMessageOutline
 } from '@mdi/js'
-import { systemTheme, userTheme } from '@/plugin/theme'
 import UserMenu from './components/UserMenu/UserMenu.vue'
 import GuestMenu from './components/GuestMenu/GuestMenu.vue'
 import { ref } from 'vue'
 import { RouteNames, RoutePaths } from '@/constants/route.constants'
-
-const theme = useTheme()
-let selectedTheme = userTheme
+import { useThemeStore } from '@/stores/theme'
+import { storeToRefs } from 'pinia'
 
 const drawer = ref(false)
 
@@ -99,17 +95,9 @@ const items = [
   { text: RouteNames.POSTS, icon: mdiMessageOutline, path: RoutePaths.POSTS }
 ]
 
-function changeTheme(themeTitle: AllThemesType) {
-  if (themeTitle === 'systemTheme') {
-    localStorage.removeItem('theme')
-    theme.global.name.value = systemTheme
-    selectedTheme = null
-  } else {
-    localStorage.setItem('theme', themeTitle)
-    theme.global.name.value = themeTitle
-    selectedTheme = themeTitle
-  }
-}
+const themeStore = useThemeStore()
+const { currentTheme } = storeToRefs(themeStore)
+const { changeTheme } = themeStore
 </script>
 
 <style src="./AppHeader.style.scss" scoped></style>
