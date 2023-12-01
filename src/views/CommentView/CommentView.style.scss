@@ -1,0 +1,12 @@
+.comment__wrapper {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.comment {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}

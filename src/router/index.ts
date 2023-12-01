@@ -86,7 +86,7 @@ const router = createRouter({
         title: 'Users',
         breadcrumb: (route: RouteLocationNormalizedLoaded) => [
           {
-            title: 'Home ',
+            title: 'Home',
             link: RoutePaths.HOME
           },
           {
@@ -111,6 +111,48 @@ const router = createRouter({
           {
             title: 'Users',
             link: RoutePaths.USERS
+          },
+          {
+            title: route.params.id as string
+          }
+        ]
+      }
+    },
+
+    {
+      path: RoutePaths.COMMENTS,
+      name: RouteNames.COMMENTS,
+      component: () => import('@/views/CommentsView/CommentsView.vue'),
+      meta: {
+        layout: MainLayout,
+        title: 'Comments',
+        breadcrumb: (route: RouteLocationNormalizedLoaded) => [
+          {
+            title: 'Home',
+            link: RoutePaths.HOME
+          },
+          {
+            title: route.meta.title
+          }
+        ]
+      }
+    },
+
+    {
+      path: `${RoutePaths.COMMENTS}/:id`,
+      name: RouteNames.COMMENT,
+      component: () => import('@/views/CommentView/CommentView.vue'),
+      meta: {
+        layout: MainLayout,
+        title: 'Comment',
+        breadcrumb: (route: RouteLocationNormalizedLoaded) => [
+          {
+            title: 'Home',
+            link: RoutePaths.HOME
+          },
+          {
+            title: 'Comments',
+            link: RoutePaths.COMMENTS
           },
           {
             title: route.params.id as string

@@ -10,7 +10,7 @@
       <p>{{  `Website: ${user?.website}` }}</p>
 
     </div>
-    <div v-else>Post not found</div>
+    <div v-else>User not found</div>
     <div v-if="isError">Error!</div>
   </div>
 </template>

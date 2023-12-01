@@ -3,7 +3,7 @@
     <v-app-bar-nav-icon @click="drawer = !drawer">
       <svg-icon type="mdi" :path="mdiMenu"></svg-icon>
     </v-app-bar-nav-icon>
-    <v-toolbar-title>My app name</v-toolbar-title>
+    <v-toolbar-title>fake.app</v-toolbar-title>
 
     <v-menu transition="scale-transition">
       <template v-slot:activator="{ props }">
@@ -77,9 +77,10 @@ import {
   mdiAccount,
   mdiMenu,
   mdiHome,
-  mdiInformationOutline,
-  mdiMessageOutline,
-  mdiAccountGroup
+  mdiInformation,
+  mdiMessage,
+  mdiAccountGroup,
+  mdiCommentTextMultiple
 } from '@mdi/js'
 import UserMenu from './components/UserMenu/UserMenu.vue'
 import GuestMenu from './components/GuestMenu/GuestMenu.vue'
@@ -92,9 +93,10 @@ const drawer = ref(false)
 
 const items = [
   { text: RouteNames.HOME, icon: mdiHome, path: RoutePaths.HOME },
-  { text: RouteNames.POSTS, icon: mdiMessageOutline, path: RoutePaths.POSTS },
+  { text: RouteNames.POSTS, icon: mdiMessage, path: RoutePaths.POSTS },
+  { text: RouteNames.COMMENTS, icon: mdiCommentTextMultiple, path: RoutePaths.COMMENTS },
   { text: RouteNames.USERS, icon: mdiAccountGroup, path: RoutePaths.USERS },
-  { text: RouteNames.ABOUT, icon: mdiInformationOutline, path: RoutePaths.ABOUT },
+  { text: RouteNames.ABOUT, icon: mdiInformation, path: RoutePaths.ABOUT }
 ]
 
 const themeStore = useThemeStore()

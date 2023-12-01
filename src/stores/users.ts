@@ -2,7 +2,7 @@ import { defineStore } from 'pinia'
 import { ref } from 'vue'
 import axios from 'axios'
 import { useRoute } from 'vue-router'
-import type { IUser } from './users.types'
+import type { IUser } from './stores.types'
 
 export const useUsersStore = defineStore('users', () => {
   const isLoading = ref(false)

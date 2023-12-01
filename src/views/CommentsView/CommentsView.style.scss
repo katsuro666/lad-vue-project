@@ -1,0 +1,19 @@
+.comments {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+}
+
+.comment {
+  background: rgb(var(--v-theme-surface));
+  box-shadow: 0 0 10px rgb(var(--v-theme-shadow-lg));
+  padding: 10px;
+  transition: ease 0.2s;
+
+  &:hover {
+    cursor: pointer;
+    scale: 1.01;
+  }
+}

@@ -6,7 +6,9 @@ export enum RouteNames {
   POSTS = 'Posts',
   USERS = 'Users',
   USER = 'User',
-  POST = 'Post'
+  POST = 'Post',
+  COMMENTS = 'Comments',
+  COMMENT = 'Comment'
 }
 
 export enum RoutePaths {
@@ -17,5 +19,7 @@ export enum RoutePaths {
   POSTS = '/posts',
   USERS = '/users',
   USER = '/user',
+  COMMENTS = '/comments',
+  COMMENT = '/comment',
   NOTFOUND = '/:catchAll(.*)*'
 }
